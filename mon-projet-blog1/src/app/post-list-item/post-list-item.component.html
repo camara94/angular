@@ -1,3 +1,8 @@
-<p>
-  post-list-item works!
-</p>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<li [ngClass]="{'list-group-item':true,'list-group-item-success':[loveIts]>[dontLoveIts] && [loveIts]>0,'list-group-item-danger':[dontLoveIts]>[loveIts] && [dontLoveIts]>0}">
+  <h2>{{title}} <span style="position: absolute;right: 20px;">{{create_at | date : 'short'}}</span></h2>
+  <p>{{content}}</p>
+  <button class="btn btn-success" (click)="onLove()">Love It!</button>&nbsp;&nbsp;
+  <button class="btn btn-danger" (click)="onDontLove()">Don't love It!</button>
+  <span style="position: absolute;right: 20px;"> <span class="glyphicon glyphicon-thumbs-up" style="color:blue"></span><button>{{loveIts}}</button>&nbsp;  <span class="glyphicon glyphicon-thumbs-down" style="color:red;"></span><button>{{dontLoveIts}}</button></span>
+</li>
