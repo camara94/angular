@@ -4,7 +4,8 @@
     <app-appareil *ngFor="let appareil of appareils; let i = index"
                   [appareilName]="appareil.name"
                   [appareilStatus]="appareil.status"
-                  [indice]="i"></app-appareil>
+                  [indice]="i"
+                  [id]="appareil.id"></app-appareil>
   </ul>
   <button class="btn btn-success" (click)="onSwitchOnAll()">Tout allumé</button>&nbsp;
   <button class="btn btn-danger" (click)="onSwitchOffAll()">Tout éteindre</button>
