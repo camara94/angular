@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AppareilService} from '../services/appareil.service';
 
 @Component({
   selector: 'app-appareil-view',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppareilViewComponent implements OnInit {
 
-  constructor() { }
+  isAuth = false;
+  appareils:any[];
+  constructor(private appareilService:AppareilService){
+    setTimeout(()=>{
+      this.isAuth = true;
+    },4000);
+  }
 
-  ngOnInit() {
+  ngOnInit(){
+    this.appareils = this.appareilService.appareils;
+  }
+
+  onSwitchOnAll(){
+    this.appareilService.switchOnAll()
+  }
+
+  onSwitchOffAll(){
+    this.appareilService.switchOffAll();
   }
 
 }

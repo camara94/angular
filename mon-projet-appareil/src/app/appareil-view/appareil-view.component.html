@@ -1,3 +1,11 @@
-<p>
-  appareil-view works!
-</p>
+<div class="col-xs-12">
+  <h1>Mes appareils</h1>
+  <ul class="list-group">
+    <app-appareil *ngFor="let appareil of appareils; let i = index"
+                  [appareilName]="appareil.name"
+                  [appareilStatus]="appareil.status"
+                  [indice]="i"></app-appareil>
+  </ul>
+  <button class="btn btn-success" (click)="onSwitchOnAll()">Tout allumé</button>&nbsp;
+  <button class="btn btn-danger" (click)="onSwitchOffAll()">Tout éteindre</button>
+</div>
