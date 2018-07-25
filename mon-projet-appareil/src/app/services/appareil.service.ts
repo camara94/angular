@@ -49,4 +49,16 @@ export class AppareilService {
   switchOff(index:number){
     this.appareils[index].status = "éteint";
   }
+
+  addAppareil(name:string,status:string){
+    const appareil = {
+      id:0,
+      name:'',
+      status:''
+    }
+    appareil.name = name;
+    appareil.status = status;
+    appareil.id = this.appareils[(this.appareils.length-1)].id+1;
+    this.appareils.push(appareil);
+  }
 }
