@@ -1,0 +1,13 @@
+<div class="col-xs-8 col-xs-offset-2">
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Titre</label>
+      <input type="text" class="form-control" id="title" formControlName="title" />
+    </div>
+    <div class="form-group">
+      <label for="content">Contenu</label>
+      <input type="text" class="form-control" id="content" formControlName="content" />
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="postForm.invalid">Soumettre</button>
+  </form>
+</div>

@@ -1,7 +1,15 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="nav navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li routerLinkActive="active"><a routerLink="path/posts">Posts</a></li>
+        <li routerLinkActive="active"><a routerLink="new">Nouveau posts</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
-        <app-post-lis></app-post-lis>
-    </div>
+    <router-outlet></router-outlet>
   </div>
 </div>

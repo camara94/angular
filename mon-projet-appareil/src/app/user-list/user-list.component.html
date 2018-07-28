@@ -1,0 +1,13 @@
+<div class="col-xs-8 col-xs-offset-2">
+  <a routerLink="/new-user">Nouvel utilisateur</a>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let user of users">
+      <h2>{{user.firstName}} {{user.lastName}}</h2>
+      <p>{{user.email}}</p>
+      <div *ngIf="user.hobbies && user.hobbies.length">
+        Cette personne a des hobbies:<br>
+        <span *ngFor="let hobby of user.hobbies">{{hobby}} - </span>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,4 +1,12 @@
-<ul class="list-group-item">
-  <h1>Posts</h1>
-  <app-post-list-item *ngFor="let post of posts" [title]="post.title" [content]="post.content" [create_at]="post.create_at"></app-post-list-item>
-</ul>
+<div class="col-xs-12">
+  <ul class="list-group-item">
+    <h1>Posts</h1>
+    <app-post-list-item
+      *ngFor="let post of posts;let i = index" [title]="post.title"
+      [content]="post.content"
+      [create_at]="post.create_at"
+      [id]="post.id" [loveIts]="post.loveIts"></app-post-list-item>
+  </ul><br>
+  <button class="btn btn-primary" (click)="onSave()">Enregistrer vos posts au serveur</button>&nbsp;
+  <button class="btn btn-primary" (click)="onCharge()">Charger vos posts au serveur</button>
+</div>

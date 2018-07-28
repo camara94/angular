@@ -1,0 +1,32 @@
+<div class="col-xs-8 col-xs-offset-2">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstName">Prénom</label>
+      <input class="form-control" type="text" id="firstName" formControlName="firstName"/>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Nom</label>
+      <input type="text" id="lastName" class="form-control" formControlName="lastName" />
+    </div>
+    <div class="form-group">
+      <label for="email">Adresse mail</label>
+      <input type="text" class="form-control" id="email" formControlName="email" />
+    </div>
+    <div class="form-group">
+      <label for="preference">Quel boisson préferez-vous ?</label>
+      <select class="form-control" id="preference" formControl="preference">
+        <option value="Coca">Coca</option>
+        <option value="Fanta">Fanta</option>
+        <option value="Pepsi">Pepsi</option>
+      </select>
+    </div>
+    <div formArrayName="hobbies">
+      <div *ngFor="let hobby of getHobbies().controls; let i = index" class="form-group">
+        <label for="i">Donnez ton Hobby:</label>
+        <input type="text" [id]="i"  [formControlName]="i" class="form-control"/>
+      </div>
+      <button type="button" class="btn btn-success" (click)="onAddHobby()">Add hobby</button>
+    </div>
+    <button type="submit" class="btn btn-primary">Soumettre</button>
+  </form>
+</div>
