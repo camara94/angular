@@ -36,6 +36,8 @@ export class NewPostComponent implements OnInit {
       postS['loveIt'],
       postS['create_at']
     );
+
+    
     this.postService.addPost(newPost);
     this.router.navigate(['/path','posts']);
   }
